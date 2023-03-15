@@ -1,0 +1,36 @@
+<h1 class="mb-4">Registration Form</h1>
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+<div class="form-group" >
+  <label >First Name</label>
+  <input [class.is-invalid]="registerForm.controls.first_name.invalid&&registerForm.controls.
+  first_name.touched"  formControlName="first_name" type="text" class="form-control">
+  <div *ngIf="registerForm.controls.first_name.invalid&&registerForm.controls.
+  first_name.touched" class="alert alert-danger my-2">First Name Not Valid !</div> 
+</div>
+
+<div class="form-group">
+    <label >Last Name</label>
+    <input [class.is-invalid]="registerForm.controls.last_name.invalid&&registerForm.controls.
+    last_name.touched" formControlName="last_name" type="text" class="form-control">
+    <div *ngIf="registerForm.controls.last_name.invalid&&registerForm.controls.
+    last_name.touched" class="alert alert-danger my-2">Last Name Not Valid !</div> 
+  </div>
+
+  <div class="form-group">
+    <label >E-mail</label>
+    <input [class.is-invalid]="registerForm.controls.email.invalid&&registerForm.controls.
+    email.touched" formControlName="email" type="text" class="form-control">
+    <div *ngIf="registerForm.controls.email.invalid&&registerForm.controls.
+    email.touched" class="alert alert-danger my-2">E-mail Not Valid !</div> 
+  </div>
+
+  <div class="form-group">
+    <label >Password</label>
+    <input [class.is-invalid]="registerForm.controls.password.invalid&&registerForm.controls.
+    password.touched" formControlName="password" type="text" class="form-control">
+    <div *ngIf="registerForm.controls.password.invalid&&registerForm.controls.
+    password.touched" class="alert alert-danger my-2">Password Not Valid !</div> 
+  </div>
+
+  <button [disabled]="registerForm.invalid" class="btn btn-info my-5" type="submit">Register</button>
+</form>

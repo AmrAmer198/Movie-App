@@ -1,0 +1,22 @@
+<h1 class="mb-4">Login Form</h1>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+
+
+  <div class="form-group">
+    <label >E-mail</label>
+    <input [class.is-invalid]="loginForm.controls.email.invalid&&loginForm.controls.
+    email.touched" formControlName="email" type="text" class="form-control">
+    <div *ngIf="loginForm.controls.email.invalid&&loginForm.controls.
+    email.touched" class="alert alert-danger my-2">E-mail Not Valid !</div> 
+  </div>
+
+  <div class="form-group">
+    <label >Password</label>
+    <input [class.is-invalid]="loginForm.controls.password.invalid&&loginForm.controls.
+    password.touched" formControlName="password" type="text" class="form-control">
+    <div *ngIf="loginForm.controls.password.invalid&&loginForm.controls.
+    password.touched" class="alert alert-danger my-2">Password Not Valid !</div> 
+  </div>
+
+  <button [disabled]="loginForm.invalid" class="btn btn-info my-5" type="submit">login</button>
+</form>

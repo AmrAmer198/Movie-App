@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <div class="brdr w-25"></div>
+            <h4>Trending</h4>
+            <h4>Movies</h4>
+            <h4 >To watch now</h4>
+            <span class="welcome">Most watched movies by days</span>
+            <div class="brdr w-25"></div>
+        </div>
+        </div>
+        <div *ngFor="let item of trendingMovie" class="col-md-2 m-3">
+            <div>
+                <img src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" class="w-100"> 
+                <h5>{{item.title}}</h5>
+                <button class="btn btn-info"><a class="text-white" routerLink="/trending-details/{{item.media_type}}/{{item.id}}">See More</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <div class="brdr w-25"></div>
+                <h4>Trending</h4>
+                <h4>Tv shows</h4>
+                <h4 >To watch now</h4>
+                <span class="welcome">Most watched Tv shows by days</span>
+                <div class="brdr w-25"></div>
+            </div>
+            </div>
+            <div *ngFor="let item of trendingTvshows" class="col-md-2">
+                <div>
+                    <img src="https://image.tmdb.org/t/p/original{{item.poster_path}}" class="w-100"> 
+                    <h5>{{item.name}}</h5>
+                    <button class="btn btn-info"><a class="text-white" routerLink="/trending-details/{{item.media_type}}/{{item.id}}">See More</a></button>                </div>
+            </div>
+        </div>
+    
+    
